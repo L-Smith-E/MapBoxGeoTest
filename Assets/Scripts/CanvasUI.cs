@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanvasUI : MonoBehaviour
 {
-
+    [SerializeField] public GameObject MapView;
     public void ARFBtn()
     {
         GameManager.instance.ChangeScene("ARFoundations_Scene");
@@ -22,9 +22,16 @@ public class CanvasUI : MonoBehaviour
         Debug.Log("Mapbox Pressed");
     }
 
+    public void SwitchBtn()
+    {
+        GameManager.instance.SwitchView();
+        Debug.Log("SwitchButton");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        MapView.SetActive(false);
         
     }
 
